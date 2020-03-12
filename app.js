@@ -3,27 +3,48 @@ import{
     platform,
     stylesheet,
     text,
-    view
+    view,
+    keyboardavoidingview,
+    textinput,
+    touchbleopacity
 } from 'react-native';
 
 export default class app extends component {
-        
+
         render(){
-            
+
             return(
-            
-                    <view style={styles.container}>
+
+                    <keyboardavoidingview style={styles.container}>
                         <text style={styles.welcome}>
-                                
+                              <view>
+                                 <Image source={require('./src/assets/logo.png')}/>
+
                                 Bem vindo React Native!!
-                                
+                              </view>
+
+                              <view>
+                                 <textinput pleaceholder="usuario" autocorrect={false} onchangetext={()=>{}}/>
+
+                                 <textinput pleaceholder="senha" autocorrect={false} onchangetext={()=>{}}/>
+
+                                 <touchbleopacity>
+                                       <text>Logar</text>
+                                 </touchbleopacity>
+
+                                 <touchbleopacity>
+                                       <text>Cadastre-se</text>
+                                 </touchbleopacity>
+
+                              </view>
+
                         </text>
-                    </view>      
-                    
+                    </keyboardavoidingview>
+
             );
-            
+
         }
-        
+
 }
 
 const styles = stylesheet.create({
